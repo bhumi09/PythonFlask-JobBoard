@@ -35,7 +35,9 @@ def close_connection(exception):
 @app.route('/')
 @app.route('/jobs')
 def jobs():
-    return render_template('index.html')
+    jobs = execute_sql('SELECT job.id,job.title,job.description,job.salary
+    ,employer.id,employer.name as employer_name FROM job join employer on employer.id= job.employer_id')
+    return render_template('index.html',jobs=jobs)
 
 @app.route('/favicon.ico')
 def favicon():
