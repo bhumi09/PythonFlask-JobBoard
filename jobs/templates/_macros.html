@@ -1,4 +1,4 @@
-{{% marco show_job(job) %}}
+{{ % marco show_job(job) % }}
 <div class="card adjust-height">
   <header class="card-header">
     <p class="card-header-title">
@@ -15,14 +15,14 @@
     </div>
   </div>
 </div>
-{{% endmacro %}}
+{{ % endmacro % }}
 
-{{% marco show_jobs(jobs) %}}
+{{ % marco show_jobs(jobs) % }}
 <div class="columns is-multiline">
-  {% for job in jobs %}
+  { % for job in jobs % }
   <div class="column is-half">
     { show_job(job)}
   </div>
-  {% endfor %}
+  { % endfor % }
 </div>
-{{% endmacro %}}
+{{ % endmacro % }}
